@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+html {
+  touch-action: pan-x pan-y; /* Allow panning, but disable zooming */
+  overscroll-behavior: none; /* Disable pull-to-refresh effect */
+  font-size: 5px;
+  margin: 0;
+  padding: 0;
+  background-color: #32be92;
+  background-image: linear-gradient(to top left, #35459f 0%, #32be92 100%);
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+}
+
+
+h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+  background-color: #dddddd39;
+}
+
+.top-container {
+  font-family: sans-serif;
+  font-weight: 400;
+  color: #333;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom-container {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* LAYOUT */
+
+
+main {
+  position: relative;
+  width: 50svh;
+  height: 70svh;
+  background-color: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(200px);
+  filter: blur();
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.player {
+  flex: 100%;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.55s;
+}
+
+/* ELEMENTS */
+.name {
+  position: relative;
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.score {
+  
+  font-size: 8rem;
+  font-weight: 300;
+  color: #35459f;
+  margin: 1rem;
+}
+
+.player--active {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.player--active .name {
+  font-weight: 700;
+}
+.player--active .score {
+  font-weight: 400;
+}
+
+.player--active .current {
+  opacity: 1;
+}
+
+.current {
+  background-color: #35459f;
+  opacity: 0.8;
+  border-radius: 9px;
+  color: #fff;
+  width: 75%;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.75s;
+}
+
+.current-label {
+  
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  color: #ddd;
+}
+
+.current-score {
+  font-size: 3.5rem;
+}
+
+/* ABSOLUTE POSITIONED ELEMENTS */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  background: none;
+  border: none;
+  font-family: inherit;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s;
+  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  font-size: 3rem;
+  height: 7rem;
+  margin: 4px;
+  width: 30rem;
+  padding: 0.7rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn::first-letter {
+  font-size: 2.4rem;
+  display: block;
+  margin-right: 0.7rem;
+}
+
+
+.btn:active {
+  transform: translateY(5px);
+  box-shadow: 0 5px rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.dice-container {
+  height: 10svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dice {
+  
+  z-index: 100;
+  height: 12rem;
+  box-shadow: 0 2rem 5rem rgba(0, 0, 0, 0.2);
+  border-radius: 20%;
+}
+
+.player--winner {
+  background-color: #fff200a4;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: #c7365f;
+}
+
+.hidden {
+  display: none;
+}
+
+
+@media only screen and (min-width: 900px) {
+  
+  
+  
+  h1 {
+    font-size: 5rem;
+    margin: 0 0 1rem 0;
+  }
+
+
+  main {
+    width: 100vh;
+    height: 70vh;
+  }  
+
+  .btn {
+  font-size: 5rem;
+  height: 10rem;
+  margin: 4px;
+  width: 70rem;
+  }
+
+  .dice {
+    height: 15rem;
+    
+  }
+
+}
