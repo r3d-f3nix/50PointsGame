@@ -198,6 +198,13 @@ main {
   display: none;
 }
 
+@media only screen and (max-width: 390px) {
+
+  html {
+    font-size: 4px;
+  }
+
+}
 
 @media only screen and (min-width: 900px) {
   
